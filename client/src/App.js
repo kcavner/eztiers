@@ -1,17 +1,16 @@
-import React from 'react'
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Register from './pages/register'
 
-
-function App() {
-
-
-
-
-
+const AppRouter = () => {
   return (
-    <div>
-   
-    </div>
-  )
-}
-
+    <Router>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/contact" component={Contact} />
+      </Switch>
+    </Router>
+  );
+};
 export default App
