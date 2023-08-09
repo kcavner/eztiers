@@ -16,6 +16,25 @@ module.exports = {
     }
   },
   
+  async postTiers(req, res){
+    try {
+      const userId = req.params.userId;
+      const updatedUser = await User.findByIdAndUpdate(
+        userId,
+        { $push: { tiers: req.body } }, // Use $push to push to the tiers array
+        { new: true, runValidators: true }
+      );
+  
+      if (!updatedUser) {
+        return res.status(404).json({ message: 'User not found' });
+      }
+  
+      res.status(200).json(updatedUser);
+    } catch (error) {
+      res.status(500).json({ message: 'Error updating user', error });
+    }
+  },
+  
   async postUser(req,res){
     try {
         const user = new User(req.body);
