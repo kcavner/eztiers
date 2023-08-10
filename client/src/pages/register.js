@@ -1,18 +1,24 @@
-import react,{useState} from 'react';
+import React,{useState} from 'react';
 import axiosInstance from '../utils/axiosInstance';
 
 function Register(){
     const [username,setUsername] = useState();
     const [password, setPassword] = useState();
 
-    const handleSubmit = (e) =>{
+    const handleSubmit = async (e) => {
         e.preventDefault();
-
-        axiosInstance.post('/api/users',{
+      
+        try {
+          const response = await axiosInstance.post('/api/users', {
             username,
             password
-        });
-    }
+          });
+      
+          console.log('User created:', response.data);
+        } catch (error) {
+          console.error('Error creating user:', error);
+        }
+      };
 
 
 

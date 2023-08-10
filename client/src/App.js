@@ -1,18 +1,25 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Register from './pages/register'
+import React,{useState} from 'react';
 import Tier from './pages/tier'
-import Login from './pages/login'
+import Register from './pages/register'
 
 const App = () => {
+const [route,setRoute] = useState(['tier'])
+
+const handleClick = (componentName)=>{
+  setRoute(componentName);
+}
   return (
-    <Router>
-      <Switch>
-        <Route path="/" exact component={Login} />
-        <Route path="/tier" component={Tier} />
-        <Route path="/register" component={Register} />
-      </Switch>
-    </Router>
+ 
+   <div>
+     <button onClick={() => handleClick('Register')}>Register</button>
+      <button onClick={() => handleClick('Tier')}>Show tiers</button>
+
+      {route === 'Register' && <Register />}
+      {route === 'Tier' && <Tier />}
+   </div>
+          
+    
+  
   );
 };
 

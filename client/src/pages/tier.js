@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { DragDropContext } from 'react-beautiful-dnd';
-import axios from 'axios';
 import axiosInstance from '../utils/axiosInstance';
 
 function Tier(){
     const [data, setData] = useState([]);
 
-    useEffect(()=>{
+    useEffect((data)=>{
         axiosInstance.get('/api/users')
         .then(response =>{
             setData(response.data);
@@ -20,6 +18,7 @@ function Tier(){
 
     return(
         <div>
+           {/* TODO: render bubbles that were created witht the createlist component. */}
 working
         </div>
     );
