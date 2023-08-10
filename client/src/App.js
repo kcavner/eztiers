@@ -1,25 +1,19 @@
-import React,{useState} from 'react';
-import Tier from './pages/tier'
-import Register from './pages/register'
+import React from 'react';
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import Tier from './pages/tier';
+import Register from './pages/register';
+import Nav from './pages/nav'
 
 const App = () => {
-const [route,setRoute] = useState(['tier'])
 
-const handleClick = (componentName)=>{
-  setRoute(componentName);
-}
   return (
- 
-   <div>
-     <button onClick={() => handleClick('Register')}>Register</button>
-      <button onClick={() => handleClick('Tier')}>Show tiers</button>
-
-      {route === 'Register' && <Register />}
-      {route === 'Tier' && <Tier />}
-   </div>
-          
-    
-  
+    <BrowserRouter>
+      <Nav/>
+      <Routes>
+        <Route path="/tier" element={<Tier/>}/>
+        <Route path="/register" element={<Register/>}/> 
+      </Routes>
+    </BrowserRouter> 
   );
 };
 

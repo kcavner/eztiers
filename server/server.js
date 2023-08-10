@@ -7,10 +7,11 @@ const jwt = require('jsonwebtoken')
 const routes = require('./routes')
 const cors = require('cors'); 
 
+// cors headers to allow requests from backend for get and post
 app.use(cors({
-    origin: 'http://localhost:3000', // Replace with the URL of your frontend
-    methods: ['GET', 'POST'], // Allow the methods you're using
-    credentials: true // Allow cookies and other credentials
+    origin: 'http://localhost:3000',
+    methods: ['GET', 'POST'],
+    credentials: true
   }));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
