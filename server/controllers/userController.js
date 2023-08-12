@@ -63,6 +63,8 @@ module.exports = {
         id:user._id,
         username:user.username
       }
+      console.log(req.session.user)
+      console.log(req.session)
   
       return res.status(200).json({ message: 'Login successful' });
     } catch (error) {
@@ -74,6 +76,7 @@ module.exports = {
     if (req.session.user) {
       return res.status(200).json({ isAuthenticated: true });
     } else {
+      console.log(req.session)
       return res.status(401).json({ isAuthenticated: false });
     }
   }
