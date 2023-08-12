@@ -3,7 +3,7 @@ import { useAuth } from '../utils/AuthContext';
 import axiosInstance from '../utils/axiosInstance';
 
 export default function Login(){
-    const {login} = useAuth();
+    // const {login} = useAuth();
     const [username,setUsername] = useState();
     const [password,setPassword] = useState();
 
@@ -11,12 +11,12 @@ export default function Login(){
         e.preventDefault();
 
         try {
-            const response = await axiosInstance.get('/api/users',{
+            const response = await axiosInstance.post('/api/users',{
                 username,
                 password
             });
-            const token = response.data.token
-            login(token)
+            // const token = response.data.token
+            // login(token)
 
         } catch(error){
             console.error('login error', error);

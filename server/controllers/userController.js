@@ -59,11 +59,22 @@ module.exports = {
       if (!passwordMatch) {
         return res.status(401).json({ message: 'Invalid credentials' });
       }
+      req.session.user = {
+        id:user._id,
+        username:user.username
+      }
   
       return res.status(200).json({ message: 'Login successful' });
     } catch (error) {
       console.error(error);
       return res.status(500).json({ message: 'Internal server error' });
+    }
+  },
+  async authCheck(req, res){
+    if (req.session.user) {
+      return res.status(200).json({ isAuthenticated: true });
+    } else {
+      return res.status(401).json({ isAuthenticated: false });
     }
   }
 }

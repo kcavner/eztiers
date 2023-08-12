@@ -6,6 +6,8 @@ const db = require('./config/connection');
 const jwt = require('jsonwebtoken')
 const routes = require('./routes')
 const cors = require('cors'); 
+const session = require('express-session');
+
 
 // cors headers to allow requests from backend for get and post
 app.use(cors({
@@ -16,6 +18,11 @@ app.use(cors({
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(routes)
+app.use(session({
+    secret: process.env.SECRET_KEY,
+    resave: false,
+    saveUninitialized: true
+  }));
 
 
 app.get('/', (req, res) => {
