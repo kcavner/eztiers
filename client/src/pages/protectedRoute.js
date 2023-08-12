@@ -2,7 +2,7 @@
 import React  from 'react';
 import { Outlet, Navigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import axiosInstance from '../utils/axiosInstance';
 
 const useAuth = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -10,7 +10,7 @@ const useAuth = () => {
   useEffect(() => {
     async function checkAuth() {
       try {
-        const response = await axios.get('/api/auth/check');
+        const response = await axiosInstance.get('/api/users/auth');
         setIsAuthenticated(response.data.isAuthenticated);
       } catch (error) {
         console.error(error);

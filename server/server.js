@@ -15,14 +15,15 @@ app.use(cors({
     methods: ['GET', 'POST'],
     credentials: true
   }));
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
-app.use(routes)
-app.use(session({
+  app.use(session({
     secret: process.env.SECRET_KEY,
     resave: false,
     saveUninitialized: true
   }));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(routes)
+
 
 
 app.get('/', (req, res) => {
