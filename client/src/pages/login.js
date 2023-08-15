@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Auth from '../utils/auth'
 import axiosInstance from '../utils/axiosInstance';
 
 export default function Login(){
@@ -13,8 +14,13 @@ export default function Login(){
                 username,
                 password
             });
-            console.log(response)
-
+            if (response.data.token) {
+              console.log('login success')
+              Auth.login(response.data.token)
+              window.location.href = '/tier'; // Redirect to a protected route
+            } else {
+              console.error('Login failed');
+            }
         } catch(error){
             console.error('login error', error);
         }
