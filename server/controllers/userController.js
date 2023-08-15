@@ -1,6 +1,7 @@
 const express = require('express');
 const User = require('../models/User')
 const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
 
 module.exports = {
 
@@ -59,12 +60,16 @@ module.exports = {
       if (!passwordMatch) {
         return res.status(401).json({ message: 'Invalid credentials' });
       }
-      req.session.user = {
-        id:user._id,
-        username:user.username
-      }
-      console.log(req.session.user)
-      console.log(req.session)
+      const payload = { user: username };
+      const secretKey = 'secretpassword'
+      const token = jwt.sign(payload, secretKey);
+    
+      // Set the token as an HTTP-only cookie
+      res.cookie('jwtToken', token, {
+        httpOnly: true,
+        secure: true, // Set to true if using HTTPS
+        sameSite: 'strict', // Adjust according to your needs
+      });
   
       return res.status(200).json({ message: 'Login successful' });
     } catch (error) {

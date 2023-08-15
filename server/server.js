@@ -1,24 +1,13 @@
-require('dotenv').config()
-
 const express = require('express')
 const app = express()
 const db = require('./config/connection');
-const jwt = require('jsonwebtoken')
 const routes = require('./routes')
 const cors = require('cors'); 
-const session = require('express-session');
 
-
-// cors headers to allow requests from backend for get and post
 app.use(cors({
     origin: 'http://localhost:3000',
     methods: ['GET', 'POST'],
     credentials: true
-  }));
-  app.use(session({
-    secret: process.env.SECRET_KEY,
-    resave: false,
-    saveUninitialized: true
   }));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
