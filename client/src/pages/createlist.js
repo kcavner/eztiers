@@ -3,17 +3,15 @@ import React, { useState } from 'react'
 export default function CreateList(){
     const [gameText, setGameText] = useState('');
     const [table, setTable] = useState([]);
-    const [sTier, setSTier] = useState([]);
-    const [aTier, setATier] = useState([]);
-    const [bTier, setBTier] = useState([]);
-    const [cTier, setCTier] = useState([]);
-    const [dTier, setDTier] = useState([]);
+    const [sTier, setSTier] = useState([{tier:"S",gameText:"S"}]);
+    const [aTier, setATier] = useState([{tier:"A",gameText:"A"}]);
+    const [bTier, setBTier] = useState([{tier:"B",gameText:"B"}]);
+    const [cTier, setCTier] = useState([{tier:"C",gameText:"C"}]);
+    const [dTier, setDTier] = useState([{tier:"D",gameText:"D"}]);
 
     
     const handleTableSubmit = (e) => {
         e.preventDefault()
-
-        
 
     }
 
@@ -40,6 +38,7 @@ export default function CreateList(){
 
     return(
         <div>
+          <div className='entry'>
             <form>
                 <input
                 type="text"
@@ -47,38 +46,45 @@ export default function CreateList(){
                 onChange={(e) => {setGameText(e.target.value)}}
                 ></input>
             </form>
-            <div className="sTier">
+            </div>
+            <div className='entry'>
+            <button id="rankButton" className="sButton" onClick={()=>{handleTierSelect("S")}}>S</button>
+            <button id="rankButton" className="aButton" onClick={()=>{handleTierSelect("A")}}>A</button>
+            <button id="rankButton" className="bButton" onClick={()=>{handleTierSelect("B")}}>B</button>
+            <button id="rankButton" className="cButton" onClick={()=>{handleTierSelect("C")}}>C</button>
+            <button id="rankButton" className="dButton" onClick={()=>{handleTierSelect("D")}}>D</button>
+            </div>
+            <div id="tierRow"  className="sTier">
                 {sTier.map((item, index) => (
-                <div key={index}>{item.gameText}
+                <div id='bubble' key={index}>{item.gameText}
                 </div>))}
             </div>
-            <div className="aTier">
+
+            <div id="tierRow"  className="aTier">
                 {aTier.map((item, index) => (
-                <div key={index}>{item.gameText}
+                <div id='bubble' key={index}>{item.gameText}
                 </div>))}
             </div>
-            <div className="bTier">
+
+            <div id="tierRow"  className="bTier">
                 {bTier.map((item, index) => (
-                <div key={index}>{item.gameText}
+                <div id='bubble' key={index}>{item.gameText}
                 </div>))}
             </div>
-            <div className="cTier">
+
+            <div id="tierRow"  className="cTier">
                 {cTier.map((item, index) => (
-                <div key={index}>{item.gameText}
+                <div id='bubble' key={index}>{item.gameText}
+                </div>))}
+            </div>
+
+            <div id="tierRow" className="dTier">
+                {dTier.map((item, index) => (
+                <div id='bubble' key={index}>{item.gameText}
                 </div>))}
             </div>
 
             
-            <div className="dTier">
-                {dTier.map((item, index) => (
-                <div key={index}>{item.gameText}
-                </div>))}
-            </div>
-            <button className="sButton" onClick={()=>{handleTierSelect("S")}}>S</button>
-            <button className="aButton" onClick={()=>{handleTierSelect("A")}}>A</button>
-            <button className="bButton" onClick={()=>{handleTierSelect("B")}}>B</button>
-            <button className="cButton" onClick={()=>{handleTierSelect("C")}}>C</button>
-            <button className="dButton" onClick={()=>{handleTierSelect("D")}}>D</button>
         </div>
     )
 }

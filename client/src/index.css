@@ -1,13 +1,87 @@
-body {
+body{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  color:white;
+}
+nav{
+  display: flex;
+  justify-content: flex-end;
+}
+a{
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  margin-inline: 5px;
+  background-color: rgb(26, 26, 26);
+  border-radius: 5px;
+}
+.app{
+  font-size: larger;
+  height:100vh;
+  width: 100vw;
+  background-color: rgb(26, 19, 33);
+}
+#tierRow{
+display: flex;
+flex-wrap: wrap;
+border-color: bisque;
+border-width: 2px;
+border-style:inset;
+margin-block:10px
+}
+#bubble{
+  border-radius: 10px;
+  margin: 5px;
+  width:5vw;
+  height:5vw;
+  background-color: rgb(39, 75, 80);
+}
+#rankButton{
+  margin-inline: 5px;
+  margin-top: 10px;
+  
+}
+.entry{
+display: flex;
+justify-content: center;
+}
+.sButton{
+  background-color: rgb(125, 246, 255);
+  border-radius: 5px;
+  border-color: aliceblue;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.aButton{
+  background-color: rgb(119, 178, 255);
+  border-radius: 5px;
+  border-color: aliceblue;
+}
+.bButton{
+  background-color: rgb(141, 128, 255);
+  border-radius: 5px;
+  border-color: aliceblue;
+}
+.cButton{
+  background-color: rgb(190, 124, 255);
+  border-radius: 5px;
+  border-color: aliceblue;
+}
+.dButton{
+  background-color: rgb(242, 126, 255);
+  border-radius: 5px;
+  border-color: aliceblue;
+}
+.sButton:hover{
+  padding-inline: 10px;
+}
+.aButton:hover{
+  padding-inline: 10px;
+}
+.bButton:hover{
+  padding-inline: 10px;
+}
+.cButton:hover{
+  padding-inline: 10px;
+}
+.dButton:hover{
+  padding-inline: 10px;
 }

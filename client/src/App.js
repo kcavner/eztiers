@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import {BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Tier from './pages/tier';
 import Register from './pages/register';
@@ -6,11 +6,12 @@ import Login from './pages/login'
 import CreateList from './pages/createlist'
 import ProtectedRoute from './pages/protectedRoute';
 
+
 const App = () => {
-  
 
   return (
-    <BrowserRouter>
+    <div className='app'>
+    <BrowserRouter >
       <header>
         <nav>
           <Link to="/login">Login</Link>
@@ -28,6 +29,7 @@ const App = () => {
         <Route path="/register" element={<Register/>}/> 
       </Routes>
     </BrowserRouter> 
+    </div>
   );
 };
 

@@ -1,0 +1,24 @@
+{
+  "name": "tierlist2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "file.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kcavner/eztiers.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kcavner/eztiers/issues"
+  },
+  "homepage": "https://github.com/kcavner/eztiers#readme",
+  "dependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
