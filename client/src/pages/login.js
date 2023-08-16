@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import Auth from '../utils/auth'
 import axiosInstance from '../utils/axiosInstance';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBolt } from '@fortawesome/free-solid-svg-icons';
+import { faBolt, faCat} from '@fortawesome/free-solid-svg-icons';
 
 export default function Login(){
     const [username,setUsername] = useState();
@@ -54,6 +54,7 @@ export default function Login(){
         <p>Not a user?</p>
         <Link className="create-account" to="/register">Create an account!</Link>
       </form>
+      <a href='https://github.com/kcavner/eztiers' className='github'>Github <FontAwesomeIcon icon={faCat}/></a>
     </div>
     )
 }

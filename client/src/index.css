@@ -107,7 +107,6 @@ margin-top: 3px;
   background-color:rgb(0, 255, 145) ;
 }
 .login-button:hover{
- 
   cursor: pointer;
 }
 .create-account{
@@ -125,4 +124,7 @@ margin-top: 3px;
 .ez-span{
   color: rgb(0, 255, 145);
 }
-
+.github{
+  background-color: rgba(240, 248, 255, 0);
+  color:rgb(26, 19, 33);
+}
