@@ -1,3 +1,6 @@
+:root{
+  --tier-green:rgb(0, 255, 145);
+}
 body{
   margin: 0;
   color:white;
@@ -27,20 +30,42 @@ h1{
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+#tier-table{
+  background-color: rgba(0, 0, 0, 0.358);
+  padding-block: 4rem;
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  border-style: outset;
+  border-color:var(--tier-green);
+  border-width: 1px;
+  margin-inline: 3rem;
+  margin-top: 3rem;
+}
 #tierRow{
 display: flex;
 flex-wrap: wrap;
-border-color: bisque;
-border-width: 2px;
+border-color: var(--tier-green);
+border-width: 1px;
 border-style:inset;
-margin-block:10px
+border-top: 0;
+border-inline: 0;
+margin-block:1vw;
+margin-inline: 5vw;
 }
 #bubble{
+  overflow: hidden;
   border-radius: 10px;
   margin: 5px;
-  width:5vw;
-  height:5vw;
+  width:3.5rem;
+  height:3.5rem;
   background-color: rgb(39, 75, 80);
+}
+#bubble:hover{
+  width: max-content;
+}
+#bubble-letter{
+  color: var(--tier-green);
+  font-size: 5rem;
 }
 #rankButton{
   margin-inline: 5px;
@@ -107,7 +132,7 @@ align-items: center;
   border-radius: 10px;
   backdrop-filter: blur(6px);
   border-style: outset;
-  border-color:rgb(0, 255, 145);
+  border-color:var(--tier-green);
   border-width: 1px;
 }
 .login-item{
@@ -125,14 +150,14 @@ margin-top: 5px;
   cursor: pointer;
   color: rgba(104, 85, 224, 0.6);
   box-shadow: 0 0 20px rgba(104, 85, 224, 0.6);
-  background-color: rgb(0, 255, 145);
+  background-color: var(--tier-green);
 }
 .not-user{
   font-size: smaller;
 }
 .create-account{
   border-width: 1px;
-  border-color: rgb(0, 255, 145);
+  border-color: var(--tier-green);
   border-style: outset;
   border-bottom: 0;
   border-inline: 0;
@@ -142,16 +167,16 @@ margin-top: 5px;
 
 }
 .create-account:hover{
-  color: rgb(0, 255, 145);
+  color: var(--tier-green);
   
 }
 .ez-span{
-  color: rgb(0, 255, 145);
+  color: var(--tier-green);
 }
 .welcome-p{
   margin-bottom: 10px;
   border-width: 1px;
-  border-color: rgb(0, 255, 145);
+  border-color: var(--tier-green);
   border-style: outset;
   border-top: 0;
   border-inline: 0;
@@ -159,13 +184,13 @@ margin-top: 5px;
 }
 .github{
   background-color: rgba(240, 248, 255, 0);
-  color: rgb(0, 255, 145);
+  color: var(--tier-green);
 }
 .demo-container{
   margin-bottom: 10px;
 }
 .demo-account{
-  color:rgb(0, 255, 145);
+  color:var(--tier-green);
 }
 .demo{
   font-size: 15px;

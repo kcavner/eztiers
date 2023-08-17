@@ -3,11 +3,11 @@ import React, { useState } from 'react'
 export default function CreateList(){
     const [gameText, setGameText] = useState('');
     const [table, setTable] = useState([]);
-    const [sTier, setSTier] = useState([{tier:"S",gameText:"S"}]);
-    const [aTier, setATier] = useState([{tier:"A",gameText:"A"}]);
-    const [bTier, setBTier] = useState([{tier:"B",gameText:"B"}]);
-    const [cTier, setCTier] = useState([{tier:"C",gameText:"C"}]);
-    const [dTier, setDTier] = useState([{tier:"D",gameText:"D"}]);
+    const [sTier, setSTier] = useState([]);
+    const [aTier, setATier] = useState([]);
+    const [bTier, setBTier] = useState([]);
+    const [cTier, setCTier] = useState([]);
+    const [dTier, setDTier] = useState([]);
 
     
     const handleTableSubmit = (e) => {
@@ -54,34 +54,41 @@ export default function CreateList(){
             <button id="rankButton" className="cButton" onClick={()=>{handleTierSelect("C")}}>C</button>
             <button id="rankButton" className="dButton" onClick={()=>{handleTierSelect("D")}}>D</button>
             </div>
+            <div id="tier-table">
             <div id="tierRow"  className="sTier">
+            <div id="bubble-letter">S</div>
                 {sTier.map((item, index) => (
                 <div id='bubble' key={index}>{item.gameText}
                 </div>))}
             </div>
 
             <div id="tierRow"  className="aTier">
+            <div id="bubble-letter">A</div>
                 {aTier.map((item, index) => (
                 <div id='bubble' key={index}>{item.gameText}
                 </div>))}
             </div>
 
             <div id="tierRow"  className="bTier">
+            <div id="bubble-letter">B</div>
                 {bTier.map((item, index) => (
                 <div id='bubble' key={index}>{item.gameText}
                 </div>))}
             </div>
 
             <div id="tierRow"  className="cTier">
+            <div id="bubble-letter">C</div>
                 {cTier.map((item, index) => (
                 <div id='bubble' key={index}>{item.gameText}
                 </div>))}
             </div>
 
             <div id="tierRow" className="dTier">
+            <div id="bubble-letter">D</div>
                 {dTier.map((item, index) => (
                 <div id='bubble' key={index}>{item.gameText}
                 </div>))}
+            </div>
             </div>
 
             
