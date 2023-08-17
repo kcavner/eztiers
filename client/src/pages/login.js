@@ -34,8 +34,13 @@ export default function Login(){
         <div className='login-container'>
       
       <form className="login-form" onSubmit={handleLogin}>
-      <h2><span className='ez-span'>EZ</span>tiers</h2>
-      <p>welcome to EZtiers! <FontAwesomeIcon style={{color: "ffea00",}} icon={faBolt} /> </p>
+      <h1><span className='ez-span'>EZ</span>tiers</h1>
+      <p className='welcome-p'>welcome to EZtiers! <FontAwesomeIcon style={{color: "ffea00",}} icon={faBolt} /> </p>
+      <div className='demo-container'>
+      <p className='demo-account'>Demo Account</p>
+      <p className='demo'>Username: <span className='demo'>demo</span></p>
+      <p className='demo'>Password: <span className='demo'>demo123</span></p>
+      </div>
         <input
         className='login-item'
           type="text"
@@ -51,7 +56,7 @@ export default function Login(){
           onChange={(e) => setPassword(e.target.value)}
         />
         <button className='login-button' type="submit">Login</button>
-        <p>Not a user?</p>
+
         <Link className="create-account" to="/register">Create an account!</Link>
       </form>
       <a href='https://github.com/kcavner/eztiers' className='github'>Github <FontAwesomeIcon icon={faCat}/></a>
