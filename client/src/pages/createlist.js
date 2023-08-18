@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye } from '@fortawesome/free-solid-svg-icons';
 
 export default function CreateList(){
     const [gameText, setGameText] = useState('');
@@ -9,7 +11,12 @@ export default function CreateList(){
     const [cTier, setCTier] = useState([]);
     const [dTier, setDTier] = useState([]);
 
-    
+    const [isToggled, setIsToggled] = useState(true);
+
+    const handleClick = () => {
+      setIsToggled(!isToggled);
+    };
+
     const handleTableSubmit = (e) => {
         e.preventDefault()
 
@@ -58,7 +65,8 @@ export default function CreateList(){
             <div id="tierRow"  className="sTier">
             <div id="bubble-letter">S</div>
                 {sTier.map((item, index) => (
-                <div id='bubble' key={index}>{item.gameText}
+                <div id={isToggled? 'bubble' : 'bubble-hidden'} key={index} onClick={handleClick}>
+                  {isToggled? item.gameText :<FontAwesomeIcon icon={faEye} className="fa-eye"/>}
                 </div>))}
             </div>
 

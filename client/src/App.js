@@ -14,14 +14,14 @@ const App = () => {
     <BrowserRouter >
       <header>
         <nav>
-          <Link to="/login">Login</Link>
+          <Link to="/">Login</Link>
           <Link to="/create">Create List</Link>
           <Link to="/tier">Tiers</Link>
           <Link to="/register">Register</Link>
         </nav>
       </header>
       <Routes>
-        <Route path="/login" element={<Login/>}/>
+        <Route path="/" element={<Login/>}/>
         <Route element={<ProtectedRoute/>}>
           <Route path="/tier" element={<Tier/>}/>
           <Route path="/create" element={<CreateList/>}/>
