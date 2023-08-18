@@ -10,25 +10,29 @@ export default function Login(){
     const [password,setPassword] = useState();
 
     const handleLogin = async (e) => {
-        e.preventDefault();
-
+      e.preventDefault();
+  
+      if (username && password) {
         try {
-            const response = await axiosInstance.post('/api/users/login',{
-                username,
-                password
-            });
-            if (response.data.token) {
-              console.log('login success')
-              Auth.login(response.data.token)
-              window.location.href = '/tier'; // Redirect to a protected route
-            } else {
-              console.error('Login failed');
-            }
-        } catch(error){
-            console.error('login error', error);
+          const response = await axiosInstance.post('/api/users/login', {
+            username,
+            password
+          });
+  
+          if (response.data.token) {
+            console.log('login success');
+            Auth.login(response.data.token);
+            window.location.href = '/tier'; // Redirect to a protected route
+          } else {
+            console.error('Login failed');
+          }
+        } catch (error) {
+          console.error('login error', error);
         }
-
-    }
+      } else {
+        alert('Please enter a username and password.');
+      }
+    };
 
     return(
         <div className='login-container'>

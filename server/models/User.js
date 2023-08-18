@@ -11,10 +11,10 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  tiers:{
-    type:[String],
-    default:[]
-  }
+  tiers:[]
+
+    
+
 });
 
 // Use a pre-save hook to hash the user password before saving
