@@ -2,12 +2,14 @@ const express = require('express');
 const User = require('../models/User')
 const bcrypt = require('bcrypt')
 const { signToken } = require('../utils/auth')
+const mongoose = require('mongoose')
+
 
 module.exports = {
 
   async getTiers(req, res){
     try {
-      const user = await User.findById(req.params.id);
+      const user = await User.findById(req.params.userId);
       if (!user) {
         return res.status(404).send({ message: 'User not found' });
       }

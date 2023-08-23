@@ -8,10 +8,10 @@ const {
 } = require('../../controllers/userController');
 
 
-router.route('/').post(postUser).get(getTiers)
+router.route('/').post(postUser)
 router.route('/login').post(loginUser)
 router.route('/auth').get(authCheck)
-router.route('/:userId').put(postTiers)
+router.route('/:userId').put(postTiers).get(getTiers)
 
 
 module.exports = router;

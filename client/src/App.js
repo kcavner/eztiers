@@ -1,4 +1,4 @@
-import React,{ useState } from 'react';
+import React from 'react';
 import {BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Tier from './pages/tier';
 import Register from './pages/register';
