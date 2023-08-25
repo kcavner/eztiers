@@ -1,29 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import axiosInstance from '../utils/axiosInstance';
-import Auth from '../utils/auth'
+import React from 'react';
 
 
-
-function Tier(){
-    const [table,setTable] = useState()
-    const userId = Auth.getUser().data._id
-
-    useEffect(()=>{
-        try{
-            console.log('id',userId)
-        axiosInstance.get(`/api/users/${userId}`)
-        .then(response => {
-            setTable(response.data)
-        }).then(console.log(table))
-    } catch(error){
-        console.error('error with tiers',error)
-    }
-    },[])
-    return(
-        <div>
-
+const Tier = ({ table }) => {
+  return (
+    <div>
+      {table.map((item, index) => (
+        <div key={index}>
+          <p>Tier: {item.tier}</p>
+          <p>Game: {item.gameText}</p>
         </div>
-    );
-}
+      ))}
+    </div>
+  );
+};
 
 export default Tier;

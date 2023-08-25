@@ -5,6 +5,7 @@ import Register from './pages/register';
 import Login from './pages/login'
 import CreateList from './pages/createlist'
 import ProtectedRoute from './pages/protectedRoute';
+import Home from './pages/home'
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
           <Link to="/create">Create List</Link>
           <Link to="/tier">Tiers</Link>
           <Link to="/register">Register</Link>
+          <Link to="/home">Home</Link>
         </nav>
       </header>
       <Routes>
@@ -25,6 +27,7 @@ const App = () => {
         <Route element={<ProtectedRoute/>}>
           <Route path="/tier" element={<Tier/>}/>
           <Route path="/create" element={<CreateList/>}/>
+          <Route path="/home" element={<Home/>}/>
         </Route>
         <Route path="/register" element={<Register/>}/> 
       </Routes>
