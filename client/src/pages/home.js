@@ -12,11 +12,11 @@ function Home(){
 
     useEffect(()=>{
         try{
-            console.log('id',userId)
+       
         axiosInstance.get(`/api/users/${userId}`)
         .then(response => {
             setTable(response.data)
-        }).then(console.log(table))
+        })
     } catch(error){
         console.error('error with tiers',error)
     }

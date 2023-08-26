@@ -16,7 +16,6 @@ const ProtectedRoute = () => {
         return false;
       }
     }
-    console.log('check returning false', token)
     return false;
   };
   return(

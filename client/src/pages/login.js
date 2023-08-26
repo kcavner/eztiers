@@ -20,7 +20,6 @@ export default function Login(){
           });
   
           if (response.data.token) {
-            console.log('login success');
             Auth.login(response.data.token);
             window.location.href = '/tier'; // Redirect to a protected route
           } else {
