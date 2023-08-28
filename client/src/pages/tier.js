@@ -4,7 +4,7 @@ import React from 'react';
 const Tier = ({ table }) => {
   return (
     <div>
-      {table.map((item, index) => (
+       {table.map((item, index) => (
         <div key={index}>
           <p>Tier: {item.tier}</p>
           <p>Game: {item.gameText}</p>

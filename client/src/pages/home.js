@@ -7,7 +7,7 @@ import Tier from './tier'
 
 
 function Home(){
-    const [table,setTable] = useState()
+    const [table,setTable] = useState({ tiers: [] })
     const userId = Auth.getUser().data._id
 
     useEffect(()=>{
@@ -25,9 +25,11 @@ function Home(){
 
     return(
         <div>
+            {console.log(table.tiers)}
+
             {table.tiers.map((item, i) => (
-                <Tier key={i} table={item.table} />
-                ))}
+              <Tier key={i} table={item.table} />
+              ))}
 
         </div>
     );

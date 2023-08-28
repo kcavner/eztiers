@@ -23,7 +23,7 @@ module.exports = {
     try {
       const userId = req.params.userId;
       console.log(userId)
-      console.log(req.body)
+      console.log("req body", req.body)
       const updatedUser = await User.findByIdAndUpdate(
         userId,
         { $push: { tiers: req.body } }, // Use $push to push to the tiers array
