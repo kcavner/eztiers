@@ -11,7 +11,10 @@ nav{
 }
 a{
   text-decoration: none;
-  color: white;
+  color:rgb(43, 43, 43);
+}
+a.dark{
+  color: rgb(225, 225, 225);
 }
 p{
 margin: 0;
@@ -22,14 +25,19 @@ h1{
 }
 .app{
   font-size: larger;
+  color: rgb(43, 43, 43);
   height:100vw;
   width: 100vw;
-  background: linear-gradient(to bottom, rgb(26, 19, 33), rgb(125, 171, 151));
+  background: rgb(225, 225, 225);
   /* background-image: url('../public/sea.jpg') ; */
   background-size:cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   overflow-y: auto;
+}
+.app.dark{
+  background: rgb(43, 43, 43);
+  color:rgb(225, 225, 225);
 }
 #tier-table{
   background-color: rgba(0, 0, 0, 0.358);
@@ -194,6 +202,9 @@ margin-top: 5px;
 .create-account:hover{
   color: var(--tier-green);
   
+}
+.create-account.dark{
+  color:rgb(255, 255, 255) ;
 }
 .ez-span{
   background: linear-gradient(to top, rgb(112, 38, 186), rgb(0, 255, 145));

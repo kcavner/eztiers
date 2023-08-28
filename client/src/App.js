@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Tier from './pages/tier';
 import Register from './pages/register';
@@ -6,24 +6,46 @@ import Login from './pages/login'
 import CreateList from './pages/createlist'
 import ProtectedRoute from './pages/protectedRoute';
 import Home from './pages/home'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 
 const App = () => {
+  const [theme, setTheme] = useState('light');
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+  };
 
   return (
-    <div className='app'>
+    <div className={`app ${theme}`}>
+      {theme === 'light' ? (
+          <FontAwesomeIcon
+            icon={faMoon}
+            alt="Light Mode SVG"
+            onClick={toggleTheme}
+            style={{ cursor: 'pointer',color:'black' }} // Add pointer cursor to indicate clickable
+          />
+        ) : (
+          <FontAwesomeIcon
+          icon={faSun}
+            alt="Dark Mode SVG"
+            onClick={toggleTheme}
+            style={{ cursor: 'pointer' }} // Add pointer cursor to indicate clickable
+          />
+        )}
     <BrowserRouter >
       <header>
         <nav>
-          <Link to="/">Login</Link>
-          <Link to="/create">Create List</Link>
-          <Link to="/tier">Tiers</Link>
-          <Link to="/register">Register</Link>
-          <Link to="/home">Home</Link>
+          <Link className={`link ${theme}`} to="/">Login</Link>
+          <Link className={`link ${theme}`} to="/create">Create List</Link>
+          <Link className={`link ${theme}`}to="/tier">Tiers</Link>
+          <Link className={`link ${theme}`} to="/register">Register</Link>
+          <Link className={`link ${theme}`} to="/home">Home</Link>
         </nav>
       </header>
       <Routes>
-        <Route path="/" element={<Login/>}/>
+        <Route path="/" element={<Login theme={theme}/>}/>
         <Route element={<ProtectedRoute/>}>
           <Route path="/tier" element={<Tier/>}/>
           <Route path="/create" element={<CreateList/>}/>

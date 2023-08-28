@@ -5,7 +5,7 @@ import axiosInstance from '../utils/axiosInstance';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBolt, faCat} from '@fortawesome/free-solid-svg-icons';
 
-export default function Login(){
+export default function Login({theme}){
     const [username,setUsername] = useState();
     const [password,setPassword] = useState();
 
@@ -60,7 +60,7 @@ export default function Login(){
         />
         <button className='login-button' type="submit">Login</button>
 
-        <Link className="create-account" to="/register">Create an account!</Link>
+        <Link className={`create-account ${theme}`} to="/register">Create an account!</Link>
       </form>
       <a href='https://github.com/kcavner/eztiers' className='github'>Github <FontAwesomeIcon icon={faCat}/></a>
     </div>
