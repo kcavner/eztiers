@@ -21,7 +21,7 @@ export default function Login(){
   
           if (response.data.token) {
             Auth.login(response.data.token);
-            window.location.href = '/tier'; // Redirect to a protected route
+            window.location.href = '/home'; // Redirect to a protected route
           } else {
             console.error('Login failed');
           }

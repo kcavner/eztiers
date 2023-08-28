@@ -28,7 +28,7 @@ function Home(){
             {console.log(table.tiers)}
 
             {table.tiers.map((item, i) => (
-              <Tier key={i} table={item.table} />
+              <Tier key={i} table={item.table} title={item.title} />
               ))}
 
         </div>

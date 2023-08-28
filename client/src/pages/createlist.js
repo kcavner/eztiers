@@ -20,6 +20,7 @@ function ToggleBubble({item, index}){
 
 export default function CreateList(){
     const [gameText, setGameText] = useState('');
+    const [title, setTitle] = useState('');
     const [table, setTable] = useState([]);
     const [sTier, setSTier] = useState([]);
     const [aTier, setATier] = useState([]);
@@ -35,6 +36,7 @@ export default function CreateList(){
         if(table.length){
           try {
             const response = axiosInstance.put(`/api/users/${user}`, {
+              title,
               table
             })
             if (response.status === 200) {
@@ -51,7 +53,8 @@ export default function CreateList(){
     const handleTierSelect = (tier) => {
         table.push({
           tier: tier,
-          gameText: gameText
+          gameText: gameText,
+          title: title
         });
       
         if (tier === "S") {
@@ -70,7 +73,8 @@ export default function CreateList(){
       };
 
     return(
-        <div>
+        <div><div className='entry'>
+          rank entry</div>
           <div className='entry'>
             <form>
                 <input
@@ -122,7 +126,18 @@ export default function CreateList(){
             </div>
 
             </div>
+            <div className='entry'>Tier Title</div>
+              <div className='entry'>
+            <form>
+                <input
+                type="text"
+                value={title}
+                onChange={(e) => {setTitle(e.target.value)}}
+                ></input>
+            </form>
+            </div>
             <div id="save-tier">
+              
            <button className='login-button' onClick={handleTableSubmit}>Save Tier</button>
            </div>
             

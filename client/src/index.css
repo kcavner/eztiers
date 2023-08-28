@@ -22,13 +22,14 @@ h1{
 }
 .app{
   font-size: larger;
-  height:100vh;
+  height:100vw;
   width: 100vw;
   background: linear-gradient(to bottom, rgb(26, 19, 33), rgb(125, 171, 151));
   /* background-image: url('../public/sea.jpg') ; */
-  background-size: cover;
+  background-size:cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  overflow-y: auto;
 }
 #tier-table{
   background-color: rgba(0, 0, 0, 0.358);
