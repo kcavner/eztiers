@@ -16,6 +16,7 @@ a{
 a.dark{
   color: rgb(225, 225, 225);
 }
+
 p{
 margin: 0;
 }
@@ -239,4 +240,46 @@ justify-content: center;
 }
 #save-tier button{
   font-size: larger;
+}
+.link-nav{
+  margin-inline: 1gitvw;
+}
+.tiers-list-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+
+}
+.tiers-list{
+  margin: 2px;
+  border-radius: 10px;
+  padding:10px;
+  margin: 5px;
+  margin-top: 12px;
+  width:30vw;
+  height:3rem;
+  background-color: rgba(26, 19, 33, 0.208);
+  border-color: var(--tier-green);
+border-width: 1px;
+border-style:outset;
+
+  
+}
+.tiers-list-card{
+font-size: larger;
+border-radius: 10px;
+padding:10px;
+margin: 5px;
+margin-top: 12px;
+background-color: rgba(26, 19, 33, 0.208);
+  border-color: var(--tier-green);
+border-width: 1px;
+border-style:outset;
+
+}
+.table-card{
+  margin-top: 10px;
+  height:fit-content;
 }

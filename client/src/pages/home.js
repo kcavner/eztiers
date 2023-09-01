@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import {Link} from 'react-router-dom';
 import axiosInstance from '../utils/axiosInstance';
-import Auth from '../utils/auth'
-import Tier from './tier'
+import Auth from '../utils/auth';
+import Tier from './tier';
 
 
 
@@ -25,12 +26,16 @@ function Home(){
 
     return(
         <div>
-            {console.log(table.tiers)}
-
-            {table.tiers.map((item, i) => (
-              <Tier key={i} table={item.table} title={item.title} />
-              ))}
-
+            <div className='tiers-list-container'>
+                <div className='tiers-list-card'>
+                    {table.tiers.map((item, i) => (
+                        <div className='tiers-list'>
+                            
+                            <Tier key={i} table={item.table} title={item.title} />
+                        </div>
+                    ))}
+                </div>
+            </div>
         </div>
     );
 }

@@ -37,11 +37,11 @@ const App = () => {
     <BrowserRouter >
       <header>
         <nav>
-          <Link className={`link ${theme}`} to="/">Login</Link>
-          <Link className={`link ${theme}`} to="/create">Create List</Link>
-          <Link className={`link ${theme}`}to="/tier">Tiers</Link>
-          <Link className={`link ${theme}`} to="/register">Register</Link>
-          <Link className={`link ${theme}`} to="/home">Home</Link>
+          <Link className={`link-nav ${theme}`} to="/">Login</Link>
+          <Link className={`link-nav ${theme}`} to="/create">Create List</Link>
+          <Link className={`link-nav ${theme}`}to="/tier">Tiers</Link>
+          <Link className={`link-nav ${theme}`} to="/register">Register</Link>
+          <Link className={`link-nav ${theme}`} to="/home">Home</Link>
         </nav>
       </header>
       <Routes>
