@@ -10,6 +10,7 @@ import Tier from './tier';
 function Home(){
     const [table,setTable] = useState({ tiers: [] })
     const userId = Auth.getUser().data._id
+    const [selectedTier, setSelectedTier] = useState(null);
 
     useEffect(()=>{
         try{
@@ -23,21 +24,45 @@ function Home(){
     }
     },[])
 
+    const handleTierClick = (tier) => {
+        // Set the selectedTier state to the clicked tier
+        setSelectedTier(tier);
+      };
 
-    return(
+      const handleBackToHome = () => {
+        setSelectedTier(null); // Set selectedTier to null when going back to Home
+      };
+
+
+      return (
         <div>
+            
+          {selectedTier ? (
+            // Render the selected tier if it's not null
+            <Tier
+              key={selectedTier._id} // Use a unique identifier for the key
+              table={selectedTier.table}
+              title={selectedTier.title}
+              onBackToHome={handleBackToHome}
+            />
+          ) : (
+            // Render the list of tiers if no tier is selected
             <div className='tiers-list-container'>
-                <div className='tiers-list-card'>
-                    {table.tiers.map((item, i) => (
-                        <div className='tiers-list'>
-                            
-                            <Tier key={i} table={item.table} title={item.title} />
-                        </div>
-                    ))}
-                </div>
+              <div className='tiers-list-card'>
+              {!table.tiers.length ? (<p>Please Create a Tier</p>): 'Tiers'}
+                {table.tiers.map((item) => (
+                  <div className='tiers-list' key={item._id}>
+                    {/* Use a function to handle the click event */}
+                    <button onClick={() => handleTierClick(item)}>
+                      {item.title}
+                    </button>
+                  </div>
+                ))}
+              </div>
             </div>
+          )}
         </div>
-    );
-}
+      );
+    }
 
 export default Home;

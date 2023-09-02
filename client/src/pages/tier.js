@@ -8,6 +8,7 @@ function ToggleBubble({item, index}){
   const handleClick = () => {
     setIsToggled(!isToggled);
   };
+
   return(
     <div id={isToggled? 'bubble' : 'bubble-hidden'} key={index} onClick={handleClick}>
     {isToggled? item.gameText : <FontAwesomeIcon icon={faEye} className="fa-eye"/>}
@@ -16,18 +17,18 @@ function ToggleBubble({item, index}){
 
 }
 
-const Tier = ({ table, title }) => {
+const Tier = ({ table, title, onBackToHome }) => {
   const [sTier, setSTier] = useState([]);
   const [aTier, setATier] = useState([]);
   const [bTier, setBTier] = useState([]);
   const [cTier, setCTier] = useState([]);
   const [dTier, setDTier] = useState([]);
 
-  const [isCardExpanded, setIsCardExpanded] = useState(false);
+  // const [isCardExpanded, setIsCardExpanded] = useState(false);
 
-  const handleClick = () => {
-    setIsCardExpanded(!isCardExpanded);
-  };
+  // const handleClick = () => {
+  //   setIsCardExpanded(!isCardExpanded);
+  // };
 
   useEffect(() => {
     console.log("table", table);
@@ -69,11 +70,11 @@ const Tier = ({ table, title }) => {
   }, [table]);
   return (
     <div className='table-card'>
-      <div className='table-card-header' onClick={handleClick}>
-        {title}
+      <div className='table-card-header' >
+        <button onClick={onBackToHome}>Back to Tier List</button>
       </div>
 
-      {isCardExpanded && (
+      {/* {isCardExpanded && ( */}
       <div id="tier-table">
       <div id="tierRow"  className="sTier">
       <div id="bubble-letter">S</div>
@@ -104,7 +105,8 @@ const Tier = ({ table, title }) => {
           {dTier.map((item, index) => (
           <ToggleBubble item={item} index={index}/>))}
       </div>
-      </div>)}
+      </div>
+      {/* )} */}
     </div>
   );
 };
