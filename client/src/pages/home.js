@@ -52,7 +52,7 @@ function Home(){
               {!table.tiers.length ? (<p>Please Create a Tier</p>): 'Tiers'}
                 {table.tiers.map((item) => (
                   <div className='tiers-list' key={item._id}>
-                    {/* Use a function to handle the click event */}
+                   
                     <button onClick={() => handleTierClick(item)}>
                       {item.title}
                     </button>

@@ -14,7 +14,6 @@ function ToggleBubble({item, index}){
     {isToggled? item.gameText : <FontAwesomeIcon icon={faEye} className="fa-eye"/>}
   </div>
   )
-
 }
 
 const Tier = ({ table, title, onBackToHome }) => {
@@ -23,12 +22,6 @@ const Tier = ({ table, title, onBackToHome }) => {
   const [bTier, setBTier] = useState([]);
   const [cTier, setCTier] = useState([]);
   const [dTier, setDTier] = useState([]);
-
-  // const [isCardExpanded, setIsCardExpanded] = useState(false);
-
-  // const handleClick = () => {
-  //   setIsCardExpanded(!isCardExpanded);
-  // };
 
   useEffect(() => {
     console.log("table", table);
@@ -60,7 +53,6 @@ const Tier = ({ table, title, onBackToHome }) => {
             break;
         }
       });
-  
       setSTier(updatedSTier);
       setATier(updatedATier);
       setBTier(updatedBTier);
@@ -68,45 +60,46 @@ const Tier = ({ table, title, onBackToHome }) => {
       setDTier(updatedDTier);
     }
   }, [table]);
+
   return (
     <div className='table-card'>
       <div className='table-card-header' >
-        <button onClick={onBackToHome}>Back to Tier List</button>
+        <button className='login-button'onClick={onBackToHome}>Back to Tier List</button>
       </div>
 
-      {/* {isCardExpanded && ( */}
       <div id="tier-table">
-      <div id="tierRow"  className="sTier">
-      <div id="bubble-letter">S</div>
-          {sTier.map((item, index) => (<ToggleBubble item={item} index={index}/>
-          ))}
-      </div>
 
-      <div id="tierRow"  className="aTier">
-      <div id="bubble-letter">A</div>
+        <div id="tierRow"  className="sTier">
+          <div id="bubble-letter">S</div>
+          {sTier.map((item, index) => (
+          <ToggleBubble item={item} index={index}/>))}
+        </div>
+
+        <div id="tierRow"  className="aTier">
+          <div id="bubble-letter">A</div>
           {aTier.map((item, index) => (
           <ToggleBubble item={item} index={index}/>))}
-      </div>
+        </div>
 
-      <div id="tierRow"  className="bTier">
-      <div id="bubble-letter">B</div>
+        <div id="tierRow"  className="bTier">
+          <div id="bubble-letter">B</div>
           {bTier.map((item, index) => (
           <ToggleBubble item={item} index={index}/>))}
-      </div>
+        </div>
 
-      <div id="tierRow"  className="cTier">
-      <div id="bubble-letter">C</div>
+        <div id="tierRow"  className="cTier">
+          <div id="bubble-letter">C</div>
           {cTier.map((item, index) => (
           <ToggleBubble item={item} index={index}/>))}
-      </div>
+        </div>
 
-      <div id="tierRow" className="dTier">
-      <div id="bubble-letter">D</div>
+        <div id="tierRow" className="dTier">
+          <div id="bubble-letter">D</div>
           {dTier.map((item, index) => (
           <ToggleBubble item={item} index={index}/>))}
+          </div>
+          
       </div>
-      </div>
-      {/* )} */}
     </div>
   );
 };

@@ -4,6 +4,7 @@
 body{
   margin: 0;
   color:white;
+  
 }
 nav{
   display: flex;
@@ -16,7 +17,10 @@ a{
 a.dark{
   color: rgb(225, 225, 225);
 }
-
+header{
+  display: flex;
+  
+}
 p{
 margin: 0;
 }
@@ -26,9 +30,9 @@ h1{
 }
 .app{
   font-size: larger;
-  color: rgb(43, 43, 43);
   height:100vw;
   width: 100vw;
+  color: rgb(43, 43, 43);
   background: rgb(225, 225, 225);
   /* background-image: url('../public/sea.jpg') ; */
   background-size:cover;
@@ -222,6 +226,10 @@ margin-top: 5px;
   padding:10px;
 }
 .github{
+  color: rgb(126, 72, 180)
+
+}
+.github.dark{
   background-color: rgba(240, 248, 255, 0);
   color: var(--tier-green);
 }
@@ -282,4 +290,8 @@ border-style:outset;
 .table-card{
   margin-top: 10px;
   height:fit-content;
+}
+.table-card-header{
+  display: flex;
+  justify-content: center;
 }

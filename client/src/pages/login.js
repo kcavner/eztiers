@@ -61,8 +61,10 @@ export default function Login({theme}){
         <button className='login-button' type="submit">Login</button>
 
         <Link className={`create-account ${theme}`} to="/register">Create an account!</Link>
+        
       </form>
-      <a href='https://github.com/kcavner/eztiers' className='github'>Github <FontAwesomeIcon icon={faCat}/></a>
+      <a href='https://github.com/kcavner/eztiers' className={`github ${theme}`} >Github <FontAwesomeIcon icon={faCat}/></a>
+      
     </div>
     )
 }
