@@ -22,15 +22,7 @@ const App = () => {
       
     <BrowserRouter >
       <header>
-      <h1><span className='ez-span'>EZ</span>tiers</h1>
-        <nav>
-          <Link className={`link-nav ${theme}`} to="/">Login</Link>
-          <Link className={`link-nav ${theme}`} to="/create">Create List</Link>
-          <Link className={`link-nav ${theme}`}to="/tier">Tiers</Link>
-          <Link className={`link-nav ${theme}`} to="/register">Register</Link>
-          <Link className={`link-nav ${theme}`} to="/home">Home</Link>
-        </nav>
-        {theme === 'light' ? (
+      <h1><span className='ez-span'>EZ</span>tiers{theme === 'light' ? (
           <FontAwesomeIcon
             icon={faMoon}
             alt="Light Mode SVG"
@@ -44,7 +36,16 @@ const App = () => {
             onClick={toggleTheme}
             style={{ cursor: 'pointer' }} // Add pointer cursor to indicate clickable
           />
-        )}
+        )}</h1>
+      <div className='nav-div'>
+        <nav>
+          <Link className={`link-nav ${theme}`} to="/">Login</Link>
+          <Link className={`link-nav ${theme}`} to="/create">Create List</Link>
+          <Link className={`link-nav ${theme}`}to="/tier">Tiers</Link>
+          <Link className={`link-nav ${theme}`} to="/register">Register</Link>
+          <Link className={`link-nav ${theme}`} to="/home">Home</Link>
+        </nav>
+        </div>
       </header>
       <Routes>
         <Route path="/" element={<Login theme={theme}/>}/>

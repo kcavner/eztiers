@@ -53,7 +53,7 @@ function Home(){
                 {table.tiers.map((item) => (
                   <div className='tiers-list' key={item._id}>
                    
-                    <button onClick={() => handleTierClick(item)}>
+                    <button className="login-button" onClick={() => handleTierClick(item)}>
                       {item.title}
                     </button>
                   </div>
