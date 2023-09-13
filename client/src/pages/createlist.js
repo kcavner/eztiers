@@ -86,11 +86,11 @@ export default function CreateList(){
             
             </div>
             <div className='entry'>
-            <button id="rankButton" className="sButton" onClick={()=>{handleTierSelect("S")}}>S</button>
-            <button id="rankButton" className="aButton" onClick={()=>{handleTierSelect("A")}}>A</button>
-            <button id="rankButton" className="bButton" onClick={()=>{handleTierSelect("B")}}>B</button>
-            <button id="rankButton" className="cButton" onClick={()=>{handleTierSelect("C")}}>C</button>
-            <button id="rankButton" className="dButton" onClick={()=>{handleTierSelect("D")}}>D</button>
+            <button id="rankButton" className="sButton" onClick={gameText === '' ? () =>{ alert('please enter something to rank')} : ()=>{handleTierSelect("S")}}>S</button>
+            <button id="rankButton" className="aButton" onClick={gameText === '' ? () =>{ alert('please enter something to rank')} : ()=>{handleTierSelect("A")}}>A</button>
+            <button id="rankButton" className="bButton" onClick={gameText === '' ? () =>{ alert('please enter something to rank')} : ()=>{handleTierSelect("B")}}>B</button>
+            <button id="rankButton" className="cButton" onClick={gameText === '' ? () =>{ alert('please enter something to rank')} : ()=>{handleTierSelect("C")}}>C</button>
+            <button id="rankButton" className="dButton" onClick={gameText === '' ? () =>{ alert('please enter something to rank')} : ()=>{handleTierSelect("D")}}>D</button>
             
             </div>
             

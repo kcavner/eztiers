@@ -19,7 +19,7 @@ const ProtectedRoute = () => {
     return false;
   };
   return(
-     checkAuth() ? <Outlet /> : <Navigate to="/login" />
+     checkAuth() ? <Outlet /> : <Navigate to="/" />
   )
 
 };

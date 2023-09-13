@@ -15,6 +15,9 @@ function Register(){
           });
       
           console.log('User created:', response.data);
+          
+          window.location.href = '/'
+          alert("account created, please log in")
         } catch (error) {
           console.error('Error creating user:', error);
         }
@@ -23,8 +26,8 @@ function Register(){
 
 
     return(
-        <div>
-            <form onSubmit={handleSubmit}>
+        <div className='login-container'>
+            <form className='login-form' onSubmit={handleSubmit}>
             <div>
                 <label>Username</label>
                 <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
@@ -33,7 +36,7 @@ function Register(){
                 <label>Password</label>
                 <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
             </div>
-            <button type="submit">Register</button>
+            <button className='login-button' type="submit">Register</button>
             </form>
         </div>
     )

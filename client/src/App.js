@@ -41,7 +41,6 @@ const App = () => {
         <nav>
           <Link className={`link-nav ${theme}`} to="/">Login</Link>
           <Link className={`link-nav ${theme}`} to="/create">Create List</Link>
-          <Link className={`link-nav ${theme}`}to="/tier">Tiers</Link>
           <Link className={`link-nav ${theme}`} to="/register">Register</Link>
           <Link className={`link-nav ${theme}`} to="/home">Home</Link>
         </nav>
