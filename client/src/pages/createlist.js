@@ -41,6 +41,7 @@ export default function CreateList(){
             })
             if (response.status === 200) {
               console.log('User array updated successfully');
+             
             }
           } catch (error){
             console.error('error updating user tiers', error)
