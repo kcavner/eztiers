@@ -29,26 +29,31 @@ export default function CreateList(){
     const [dTier, setDTier] = useState([]);
 
 
-    const handleTableSubmit = (e) => {
-        e.preventDefault()
-        const user = Auth.getUser().data._id
-
-        if(table.length){
+    const handleTableSubmit = async (e) => {
+      e.preventDefault();
+      const user = Auth.getUser().data._id;
+  
+      if (title === '') {
+          return alert('enter a title');
+      }
+  
+      if (table.length) {
           try {
-            const response = axiosInstance.put(`/api/users/${user}`, {
-              title,
-              table
-            })
-            if (response.status === 200) {
-              console.log('User array updated successfully');
-             
-            }
-          } catch (error){
-            console.error('error updating user tiers', error)
-
+              const response = await axiosInstance.put(`/api/users/${user}`, {
+                  title,
+                  table,
+              });
+              if (response.status === 200) {
+                  console.log('User array updated successfully');
+                  window.location.href = '/home';
+              }
+          } catch (error) {
+              console.error('error updating user tiers', error);
           }
-        } else{alert('table not populated')}
-    }
+      } else {
+          alert('table not populated');
+      }
+  };
 
 
     const handleTierSelect = (tier) => {

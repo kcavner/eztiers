@@ -50,14 +50,15 @@ h1{
 }
 #tier-table{
   background-color: rgba(0, 0, 0, 0.358);
-  padding-block: 4rem;
+  padding-block: 1rem;
   border-radius: 10px;
   backdrop-filter: blur(6px);
   border-style: outset;
   border-color:var(--tier-green);
   border-width: 1px;
   margin-inline: 3rem;
-  margin-top: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 #tierRow{
 display: flex;
@@ -110,8 +111,11 @@ border-style:outset;
   font-size: 5rem;
 }
 #rankButton{
+  font-family:'Times New Roman', Times, serif;
   margin-inline: 5px;
   margin-top: 10px;
+  border: 0px;
+  font-size: larger;
   
 }
 .entry{
@@ -262,6 +266,7 @@ justify-content: center;
 
 }
 .tiers-list{
+  display: flex;
   margin: 2px;
   border-radius: 10px;
   padding:10px;
@@ -273,6 +278,8 @@ justify-content: center;
   border-color: var(--tier-green);
 border-width: 1px;
 border-style:outset;
+flex-direction: row;
+  justify-content: space-between;
 
   
 }
@@ -298,4 +305,13 @@ border-style:outset;
 }
 .link-nav{
   padding-inline-start: 10px;
+}
+.delete-button{
+  background-color: rgba(255, 144, 144, 0.452);
+  border-radius: 6px;
+}
+input{
+  border-color: var(--tier-green);
+  border-radius: 3px;
+  border-width: 1px;
 }

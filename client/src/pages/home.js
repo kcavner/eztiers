@@ -7,7 +7,6 @@ import axios from "axios";
 
 function Home() {
   const [table, setTable] = useState({ tiers: [] });
-  const [deletedTier, setDeletedTier] = useState([])
   const userId = Auth.getUser().data._id;
   const [selectedTier, setSelectedTier] = useState(null);
 
@@ -29,19 +28,19 @@ function Home() {
     setSelectedTier(null); 
   };
 
-  const handleDelete = (title) => {
+  const handleDelete = async (title) => { // Make handleDelete an async function
     const titleJson = {
-      title: title
-    }
+      title: title,
+    };
     try {
-      axiosInstance.put(`/api/users/delete/${userId}`, titleJson).then((response) => {
-        setDeletedTier(response.data)
-        console.log(deletedTier)
-      })
-    }catch (error) {
+      const response = await axiosInstance.put(`/api/users/delete/${userId}`, titleJson);
+      window.location.href = '/home';
+    } catch (error) {
       console.error("error with delete", error);
     }
   };
+
+
 
   return (
     <div>
