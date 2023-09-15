@@ -19,6 +19,39 @@ module.exports = {
     }
   },
   
+  async deleteTier(req, res) {
+    try {
+      const user = await User.findById(req.params.userId);
+  
+      if (!user) {
+        return res.status(404).send({ message: 'User not found' });
+      }
+  
+      const { title } = req.body; 
+  
+      if (!title) {
+        return res.status(400).json({ message: 'Title is required in the request body' });
+      }
+  
+
+      const removedList = user.tiers.find((tier) => tier.title === title);
+  
+      if (!removedList) {
+        return res.status(404).json({ message: 'List not found' });
+      }
+  
+      user.tiers = user.tiers.filter((tier) => tier.title !== title);
+      await user.save();
+  
+      return res.json({ message: 'List removed successfully', data: removedList });
+    } catch (error) {
+      console.error('Error removing list:', error);
+      res.status(500).json({ message: 'Internal server error' });
+    }
+  },
+
+ 
+  
   async postTiers(req, res){
     try {
       const userId = req.params.userId;
