@@ -9,6 +9,7 @@ body{
 nav{
   display: flex;
 justify-content: space-between;
+gap: 5px;
 }
 a{
   text-decoration: none;

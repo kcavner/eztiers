@@ -8,14 +8,22 @@ import ProtectedRoute from "./pages/protectedRoute";
 import Home from "./pages/home";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import Auth from './utils/auth'
 
 const App = () => {
   const [theme, setTheme] = useState("light");
+  const [logStatus,setLogStatus] = useState(null)
 
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
   };
+
+  
+
+  const logout = () => {
+    Auth.logout()
+  }
 
   return (
     <div className={`app ${theme}`}>
@@ -50,17 +58,18 @@ const App = () => {
               )}
             </div>
               <Link className={`link-nav ${theme}`} to="/">
-                Login
+                -Login-
               </Link>
               <Link className={`link-nav ${theme}`} to="/create">
-                Create List
+                -Create List-
               </Link>
               <Link className={`link-nav ${theme}`} to="/register">
-                Register
+                -Register-
               </Link>
               <Link className={`link-nav ${theme}`} to="/home">
-                Home
+                -Home-
               </Link>
+              <button onClick={logout}>Logout</button>
             </nav>
           </div>
         </header>
