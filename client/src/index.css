@@ -32,6 +32,7 @@ margin: 0;
 h1{
   margin-bottom: 10px;
   margin-top: 0px;
+  cursor: pointer;
 }
 .app{
   font-size: larger;
