@@ -69,7 +69,10 @@ const App = () => {
               <Link className={`link-nav ${theme}`} to="/home">
                 -Home-
               </Link>
-              <button onClick={logout}>Logout</button>
+              <Link className={`link-nav ${theme}`} onClick={logout}>
+                -Logout-
+              </Link>
+             
             </nav>
           </div>
         </header>
