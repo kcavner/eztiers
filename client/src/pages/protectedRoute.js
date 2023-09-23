@@ -10,7 +10,7 @@ const ProtectedRoute = () => {
     const token = Auth.getToken(); // Get the token using Auth class
     if (token) {
       try {
-        return Auth.isTokenExpired(token) ? false : true
+        return !Auth.isTokenExpired(token)
       } catch (error) {
         console.log(error)
         return false;
