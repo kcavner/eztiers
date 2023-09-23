@@ -31,7 +31,7 @@ const App = () => {
         <header>
           <h1
             onClick={() => {
-              window.location.href = "/home";
+              window.location.href = "/";
             }}
           >
             <span className="ez-span">EZ</span>tiers
